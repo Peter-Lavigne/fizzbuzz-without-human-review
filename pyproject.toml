@@ -1,0 +1,49 @@
+[project]
+name = "fizzbuzz"
+version = "1.0.0"
+readme = "README.md"
+authors = [{ name = "Peter Lavigne" }]
+requires-python = ">=3.12"
+dependencies = [
+    "pyright==1.1.408",
+    "ruff==0.15.2",
+    "pytest==9.0.2",
+    "mutmut==3.4.0",
+    "hypothesis==6.151.9",
+]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+
+[project.urls]
+Homepage = "https://github.com/Peter-Lavigne/fizzbuzz-without-human-review"
+Repository = "https://github.com/Peter-Lavigne/fizzbuzz-without-human-review"
+
+[build-system]
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
+
+[project.scripts]
+fizzbuzz = "fizzbuzz.main:main"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+[tool.ruff.lint]
+select = [
+    # Using "ALL" is not a recommended practice, but makes this particular repo simpler as a demonstration project.
+    "ALL",
+]
+ignore = [
+    # Ignore docstring requirements.
+    "D",
+    # Allow print() statements, which are used in main.py
+    "T201",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Allow `assert` statements in test files.
+"*_test.py" = ["S101"]
+
+[tool.mutmut]
+paths_to_mutate = [ "src/fizzbuzz/fizzbuzz.py" ]
