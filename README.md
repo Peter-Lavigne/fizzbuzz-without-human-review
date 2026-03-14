@@ -1,6 +1,8 @@
 # fizzbuzz-without-human-review
 
-This repo provides quality checks, but no implementation, for the following simplified fizzbuzz problem:
+This repo is a companion piece to the essay "<a href="https://peterlavigne.com/writing/verifying-ai-generated-code">Toward automated verification of unreviewed AI-generated code</a>."
+
+The repo provides quality checks, but no implementation, for the following simplified fizzbuzz problem:
 
 ```
 Given a positive integer, N, return:
@@ -9,8 +11,6 @@ Given a positive integer, N, return:
 - "FizzBuzz" if N is divisible by both 3 and 5
 - N as a string, if none of the above conditions are true
 ```
-
-This is a companion piece to an upcoming essay.
 
 # Setup
 
